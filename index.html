@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming of the Everyone | Official Links</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Import Font Awesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #a5f3fc; /* Icy blue to match the snowy image */
+            --secondary-color: #38bdf8;
+            --accent-glow: rgba(165, 243, 252, 0.6);
+            --text-color: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.07);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0f172a, #1e293b, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s ease-in-out infinite;
+        }
+        .orb-1 { background: var(--primary-color); top: -10%; left: -10%; }
+        .orb-2 { background: var(--secondary-color); bottom: -10%; right: -10%; animation-delay: -5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 50px); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Banner Section */
+        .banner {
+            width: 100%;
+            height: 180px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: -60px; /* Pulls the profile pic up into the banner */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-pic-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #0f172a;
+            object-fit: cover;
+            box-shadow: 0 0 25px var(--accent-glow);
+            animation: pulseGlow 3s infinite;
+            background: #1e293b;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px var(--accent-glow); }
+            50% { box-shadow: 0 0 35px var(--primary-color); }
+            100% { box-shadow: 0 0 15px var(--accent-glow); }
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .bio {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .link-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 18px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-card i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .link-card:hover i {
+            transform: rotate(-10deg) scale(1.2);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <!-- Banner using your local file -->
+        <div class="banner">
+            <img src="https://lh3.googleusercontent.com/d/1wQbPM9-nHOPbzWo7cYiUGzDwjRkTV4K9" alt="Gaming Hub Banner">
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-pic-container">
+                <!-- Updated to use the same image as the banner -->
+                <img src="https://lh3.googleusercontent.com/d/1wQbPM9-nHOPbzWo7cYiUGzDwjRkTV4K9" alt="Gaming of the Everyone" class="profile-pic">
+            </div>
+            <h1>Gaming of the Everyone</h1>
+            <p class="bio">Welcome to the ultimate gaming hub! <br> Join the community below. 🚀</p>
+        </div>
+
+        <div class="links-container">
+            <a href="https://easydonate.app/gamingoftheeveryone" target="_blank" class="link-card">
+                <i class="fa-solid fa-heart"></i> Support Me / Donate
+            </a>
+            <a href="https://discord.gg/EqJpqu27P9" target="_blank" class="link-card">
+                <i class="fa-brands fa-discord"></i> Join My Discord
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2026 Gaming of the Everyone <br>
+            <span style="font-size: 0.7rem; opacity: 0.4;">Crafted with ❤️ by Claude Code</span>
+        </footer>
+    </div>
+
+</body>
+</html>
